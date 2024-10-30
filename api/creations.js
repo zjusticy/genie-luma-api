@@ -54,8 +54,6 @@ export default async function handler(req, res) {
 
   const { prompt, token } = req.body;
 
-  console.log(token);
-
   // const encoder = new TextEncoder();
 
   // const { prompt } = req.body;
