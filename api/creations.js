@@ -2,12 +2,6 @@
 //   runtime: 'edge', // Specifies the Edge runtime
 // };
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type',
-};
-
 const genieUrl = 'https://webapp.engineeringlumalabs.com/api/v3/creations';
 
 // const genAI = new GoogleGenerativeAI(process.env.API_KEY);

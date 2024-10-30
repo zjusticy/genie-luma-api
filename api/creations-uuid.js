@@ -2,12 +2,6 @@
 //   runtime: 'edge', // Specifies the Edge runtime
 // };
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type',
-};
-
 const genieSingleUrl =
   'https://webapp.engineeringlumalabs.com/api/v3/creations/uuid';
 
@@ -60,11 +54,11 @@ export default async function handler(req, res) {
     // }
     const data = await response.json();
 
-    return res.status(200).json(data, {
-      headers: {
-        ...corsHeaders,
-      },
-    });
+    res.setHeader('Access-Control-Allow-Origin', '');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+    return res.status(200).json(data);
   } catch (error) {
     console.log(error);
   }
