@@ -1,0 +1,12 @@
+{
+  "name": "google-generative-api",
+  "version": "1.0.0",
+  "repository": "https://github.com/zjusticy/google-generative-api.git",
+  "author": "zjusticy",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@google/generative-ai": "^0.7.1",
+    "cors": "^2.8.5"
+  }
+}
