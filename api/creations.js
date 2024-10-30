@@ -81,7 +81,7 @@ export default async function handler(req) {
       },
       body: JSON.stringify(genieData), // Convert the data object to a JSON string
     });
-    if (response.status !== 200) {
+    if (response.status !== 'success') {
       throw new Error('Could not fetch genie');
     }
     const data = await response.json();
