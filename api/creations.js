@@ -28,7 +28,7 @@ const genieUrl = 'https://webapp.engineeringlumalabs.com/api/v3/creations';
 //   });
 // }
 
-export default async function handler(req) {
+export default async function handler(req, res) {
   // const { host } = req.headers;
   // const url = new URL(`https://${host}/${req.url}`);
   // const urlParams = url.searchParams;
