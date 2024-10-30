@@ -2,6 +2,12 @@
 //   runtime: 'edge', // Specifies the Edge runtime
 // };
 
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type',
+};
+
 const genieUrl = 'https://webapp.engineeringlumalabs.com/api/v3/creations';
 
 // const genAI = new GoogleGenerativeAI(process.env.API_KEY);
@@ -32,14 +38,18 @@ export default async function handler(req, res) {
 
   // Handle preflight request
   if (req.method === 'OPTIONS') {
-    return new Response(null, { headers: { ...corsHeaders } });
+    res.writeHead(204, corsHeaders);
+    res.end();
+    return;
   }
 
   if (req.method !== 'POST') {
-    return new Response('Method Not Allowed', {
-      status: 405,
-      headers: { ...corsHeaders, Allow: 'POST' },
+    res.writeHead(405, {
+      ...corsHeaders,
+      Allow: 'POST',
     });
+    res.end('Method Not Allowed');
+    return;
   }
 
   const { prompt, token } = req.body;
@@ -80,11 +90,12 @@ export default async function handler(req, res) {
     // }
     const data = await response.json();
 
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.writeHead(200, {
+      ...corsHeaders,
+      'Content-Type': 'application/json',
+    });
 
-    return res.status(200).json(data);
+    return res.end(JSON.stringify(data));
   } catch (error) {
     console.log(error);
   }
