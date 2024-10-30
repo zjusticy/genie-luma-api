@@ -48,7 +48,7 @@ export default async function handler(req) {
     });
   }
 
-  const { prompt, token } = await req.body;
+  const { prompt, token } = req.body;
 
   // const encoder = new TextEncoder();
 
