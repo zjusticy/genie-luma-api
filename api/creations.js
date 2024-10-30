@@ -1,6 +1,6 @@
-export const config = {
-  runtime: 'edge', // Specifies the Edge runtime
-};
+// export const config = {
+//   runtime: 'edge', // Specifies the Edge runtime
+// };
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
