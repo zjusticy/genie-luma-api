@@ -49,7 +49,6 @@ function App() {
       //   throw new Error('Could not fetch genie');
       // }
       const data = await response.json();
-      console.log(data);
       if (data && data.response) {
         await delay(40000);
         const detailRes = [];
@@ -71,10 +70,6 @@ function App() {
       changeLoading(false);
     }
   };
-
-  useEffect(() => {
-    console.log(loading);
-  }, [loading]);
 
   const onClick = () => {
     changeLoading(true);
