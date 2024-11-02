@@ -104,7 +104,7 @@ function App() {
               onChange={handleInputToken}
             />
           </div>
-          <div className="flex justify-center">
+          <div className="card flex justify-center">
             <button
               onClick={() => {
                 setToken(tokenInput);
@@ -182,7 +182,7 @@ function App() {
       )}
       {!createMode && !addTokenMode && (
         <div className="w-full max-w-[600px] mx-auto">
-          <div className="card flex justify-end mb-12">
+          <div className="flex justify-end mb-12">
             <button
               onClick={() => {
                 setTokenInput(token);
