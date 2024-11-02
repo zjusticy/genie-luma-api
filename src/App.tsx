@@ -104,7 +104,7 @@ function App() {
               onChange={handleInputToken}
             />
           </div>
-          <div className="card flex justify-center">
+          <div className="flex justify-center">
             <button
               onClick={() => {
                 setToken(tokenInput);
