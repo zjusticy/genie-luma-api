@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, useEffect } from 'react';
+import { useState, ChangeEvent } from 'react';
 import './App.css';
 import CustomTextArea from './components/text-area';
 import { Sparkles, X, LoaderCircle, Key } from 'lucide-react';
