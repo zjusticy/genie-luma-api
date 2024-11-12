@@ -36,7 +36,7 @@ const LoadingSpinner: React.FC = () => (
 
 const Model: React.FC<ModelProps> = ({ url }) => {
   const { scene } = useGLTF(url);
-  return <primitive object={scene} />;
+  return <primitive object={scene} scale={3} />;
 };
 
 const ErrorMessage: React.FC<ErrorMessageProps> = ({ message }) => (
@@ -53,14 +53,10 @@ const GLBViewer: React.FC<GLBViewerProps> = ({
   modelUrl: string;
 }) => {
   const [error, setError] = useState<string | null>(null);
-  console.log(modelUrl);
   return (
-    <div className="w-full h-96 bg-gray-400 rounded-lg">
-      <Canvas
-        camera={{ position: [0, 0, 5], fov: 45 }}
-        className="w-full h-full"
-      >
-        <ambientLight intensity={2} />
+    <div className="w-full aspect-square bg-gray-300 rounded-lg">
+      <Canvas camera={{ position: [0, 0, 5], fov: 45 }} className="w-full">
+        <ambientLight intensity={8} />
         <pointLight position={[10, 10, 10]} />
         <Suspense fallback={null}>
           <ErrorBoundary onError={(e) => setError(e)}>

@@ -91,7 +91,7 @@ function App() {
           </button>
           <div className="mt-4">
             <textarea
-              className="block resize-none py-2 w-full bg-[inherit] \
+              className="block  resize-none p-2 w-full bg-[inherit] \
         border rounded-md text-[1.5rem] text-[color:rgba(0, 0, 0, 0.5)] leading-normal"
               rows={5}
               value={tokenInput}
@@ -113,7 +113,7 @@ function App() {
         </div>
       )}
       {createMode && !addTokenMode && (
-        <div className="flex flex-col w-full max-w-[600px] mx-auto p-8 pt-4 bg-gray-800 rounded-2xl">
+        <div className="flex flex-col w-full max-w-[600px] mx-auto p-4 pb-8 bg-gray-800 rounded-2xl">
           {/* Close button */}
           <button
             onClick={() => {
@@ -130,7 +130,7 @@ function App() {
 
           {/* Grid container with fixed width */}
           {detailViewMode ? (
-            <div>
+            <div className="w-full mt-4">
               <GLBViewer
                 modelUrl={
                   detailRes?.[detailViewNumber].output?.[0].file_url || ''
